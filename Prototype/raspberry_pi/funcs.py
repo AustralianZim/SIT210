@@ -2,9 +2,6 @@ import requests
 import urllib.request
 import json
 
-device_number = "370048001851373237343331"
-access_token = "d3d7d4d4fd0128ca685d0937bfaab00b1a6a0fc7"
-
 def water_plant(device_number, access_token, command):
     params = {'access_token':access_token, 'arg':command}
 
