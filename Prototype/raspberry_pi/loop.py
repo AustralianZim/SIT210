@@ -1,8 +1,8 @@
 from threads import *
 from queue import Queue
 
-device_number = "370048001851373237343331"
-access_token = "d3d7d4d4fd0128ca685d0937bfaab00b1a6a0fc7"
+device_number = "<your_device_number>"
+access_token = "<your_access_token>"
 
 moisture_queue = Queue()
 
