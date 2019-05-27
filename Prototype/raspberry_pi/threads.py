@@ -42,8 +42,6 @@ class MoistureThread(threading.Thread):
     def moisture(self):
         print("Getting moisture")
         moisture = get_moisture(self.device_number, self.access_token)
-        moisture -= self.inc
-        self.inc += 3
         
         #Store the data into a file in date|moisture format
         with open('moisture.data', 'a') as dataf:
@@ -62,7 +60,7 @@ class MoistureThread(threading.Thread):
             print('-'*10)
             try:
                 self.moisture_queue.put(self.moisture())
-                sleep(60) #sleep an hour...
+                sleep(60*60) #sleep an hour...
             except:
                 print("\033[31m->Failed to read moisture. Photon may be offline.")
                 sleep(20)
